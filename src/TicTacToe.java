@@ -1,9 +1,9 @@
 public class TicTacToe {
 
-    static void createBoard(){
-        char[]board=new char[10];
-        for (int i=1;i<10;i++){
-            board[i]=' ';
+    static void createBoard() {
+        char[] board = new char[10];
+        for (int i = 1; i < 10; i++) {
+            board[i] = ' ';
         }
 
     }
