@@ -5,7 +5,16 @@ public class TicTacToe {
     static int location;
     public static Scanner s = new Scanner(System.in);
     static char[] board = new char[10];
-
+    static void toss(){
+        double toss=Math.floor(Math.random()*10)%2;
+        int coin=s.nextInt();
+        if (coin == toss)
+        {
+            System.out.println("Player Won and will be making the 1st move ");
+        }
+        else
+            System.out.println("Player Won and will be making the 1st move");
+    }
     static void createBoard() {
 
         for (int i = 1; i < 10; i++) {
@@ -36,7 +45,7 @@ public class TicTacToe {
     static void userMove() {
         System.out.println("Enter A position between 1 to 9 ");
         location = s.nextInt();
-        for (int i = 0; i < location / 2; i++)
+
             if (location > 0 && location < 10) {
                 board[location] = player;
                 showBoard();
@@ -44,11 +53,14 @@ public class TicTacToe {
                 System.out.println("Wrong Input Start from the Beginning");
     }
 
+
     public static void main(String[] args) {
         System.out.println("Welcome To The Game of Tic Tac Toe");
+        toss();
         createBoard();
         choice();
         showBoard();
         userMove();
+
     }
 }
