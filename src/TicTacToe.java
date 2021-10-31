@@ -69,8 +69,18 @@ public class TicTacToe {
     public static void computerMove() {
         System.out.println("\nComputer Is Playing");
         do {
-            location = (int) Math.floor(Math.random() * (100 % 9) + 1);
+            int cornerLocation = (int) Math.floor(Math.random() * (100 % 4) + 1);
             if (predictWinLocationAndBlock()) {
+            }
+            else {
+                if(cornerLocation == 1)
+                    location = 1;
+                if(cornerLocation == 2)
+                    location = 3;
+                if(cornerLocation == 3)
+                    location = 7;
+                if(cornerLocation == 4)
+                    location = 9;
             }
         } while (!isEmpty(location));
         board[location] = computer;
